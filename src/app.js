@@ -86,8 +86,13 @@ class App {
     }
 
     async setupBlipClient() {
-        this.blip_client_provider = new BlipClientProvider();
-        await this.blip_client_provider.getClient();
+        try {
+            this.blip_client_provider = new BlipClientProvider();
+            await this.blip_client_provider.getClient();
+        } catch (error) {
+            this.logger.fatal('Failed to start blip client!');
+            process.exit(1);
+        }
     }
 
     async stopApp() {
