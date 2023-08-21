@@ -1,7 +1,7 @@
 {
     "bot": {
-        "identifier": "marketingwa1",
-        "access_key": "TjZrTnlTYm5tcXprZDBEQXdiSnI="
+        "identifier": "BOT ID",
+        "access_key": "BOT ACCESS KEY"
     },
     "seq": {
         "server_url": "SEQ URL",
@@ -12,8 +12,8 @@
         "swagger_path": "/"
     },
     "sheets": {
-        "client_email": "mvp-take-sheets@mvp-take-sheets.iam.gserviceaccount.com",
-        "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQClvC58i8t/SaYT\nxsQP+oRlQb0+Qcmgp4FqQIpqB2xMyqu2hqHiI2vGQRzsr/WD7jBIqdSvVSnD9Ks0\n1Hl3Lhcz3Y8WkvwpBnQiTsLw5i7677DeyuhKJi+qzVovhoCeXKv7UJheyuR/6fQX\nsBQr3i8/ZOo9r8HQQ5scrXhMHM9qKptSHOTHq0kpIhJfH9KtDYD0TyzvOgsQ6biH\nM86mJjLwM+aS5XnNKHJOBDZEzi8lNj+d+gYLDnwB2ZzpFCWKjaN6Z1lYelMRADnY\nJsNVTefK7j4/C3M4REx8SzMJOipGn1k4p6mImSP3QRb6zHWYPElDzWJs9Vjxhh5f\nROVmbMIvAgMBAAECggEAMgPPnYtMbo3JvicaLN5DjREhLIQK9l4GaouumZ/C2YvB\n9RO9D7Lzx8EHmw/gzh8X2B3UTtMrBvUzo35JZ6NzohXHJB9YVIMbkezl3HAClny2\nCg3+ur26XdeZ00TKVMAPsIhaayTcfxOZs3pSJAjphj6Mh/Ad051LVoStDH8XQui7\nWUqEmS8mDFJvHajvlN/CcOeuxyzD0bIovL5Xso+z3yY5KZAzBc4Uf0+KiRe8rs+1\nGxgZKDPLYUEwl59O6YO2VHJC5jgZ+pdNarpYIECZrTD349SGdO86hkFmMsMyNmfn\ngvXLkl/12mSF+DgC1o9hSDQKvEkO8vG7VskQ51/3gQKBgQDTMSv4fslQ+LlW4cEe\nOX6ORPZs3vCNp2FrwCAaU+PBKQZkYSy7cblx2z/Qc4rYkaMJTf53FNJt8ynL8aGX\nrmcRfGXc0IxK1nnyvxyugtpzOt/SkxxDY7Epvnv0oVgoFnXWhohilErjyCyPvSR3\npxyv1e/04rPJb16zPHPwaoWxgQKBgQDI5gc4cCh3Swj/1TUPl7M516wP29gJKaQf\nuIiJpxU4DmGpkpiqz8kxD5ihK6DIqg3BDH8Xlp/VKvfxNmiMSHiPQkwUCMfnLHG8\nSTNclRZHYmalVvo7F5itID/qWhEFgB9JLKVosncwjKkTT6ytTMH25zeds1Ev+00P\n/ZcsKJfrrwKBgQCy5kh1LBGlQczeyEYrMFEAe3K0LvZfSJbCC/Il20JncjUz+w1F\ni8Snqi6YigfoBRay3xrcDQtkkEOru3hDYT12FobDUvZEvwJ2m2XUfoxGaG0JmAyt\nGVoOHooqZDKlYsFXhIcr2qrF4d+9s1+c7DbkzLmEHDZoQKtb8a3UzqeKAQKBgGx+\nlc2r/J6YHk8TlKlMEtWdHOYfoycnnuQmo047tqDkW2fZrKsqtgvR0WrRBe74r57f\nIc/aX40evHI/IO0JwloTwsRbDaJSBUZa/er09OguQyLtuwuoraJptTrZ0zF2RO8e\ntmG5Z9cHT9QHBkk9F89AhW+cRK819yM4n6iQb6MvAoGAck6dkQgdIaEBuX2bL70o\nYMYJ79UwS8SBfsxFfB0kMc3mLaIlZO2cTVjhoJWRx/TKxBeSt1e8wp5e8ZNuJ/4a\n3dIvBy9sDwylNpWgpeArC9GEOvOwBj19jkSd54f+p+Y9P1urcO8HEVJu6qs9k3wq\nIsXvmkClNnok5lqZGur5TCc=\n-----END PRIVATE KEY-----\n",
-        "spreadsheet_id": "18i0svsO_hBSGMZeK2K9jQm3Lzkv3Lv88dF9sxQeYJ24"
+        "client_email": "",
+        "private_key": "",
+        "spreadsheet_id": ""
     }
 }
