@@ -10,5 +10,10 @@
     "api": {
         "base_path": "/api/v1",
         "swagger_path": "/"
+    },
+    "sheets": {
+        "client_email": "",
+        "private_key": "",
+        "spreadsheet_id": ""
     }
 }
