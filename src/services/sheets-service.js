@@ -1,66 +1,37 @@
-const { getSheetByIndex } = require('../facades/sheets-facade');
-const {
-    createGoogleSpreadsheetInstance,
-    useServiceAccountAuth
-} = require('../providers/google-sheets-provider');
+const { authenticate } = require('../providers/google-sheets-provider');
+const { sheets } = require('../config');
 
-const saveRow = async (sheetIndex, newRowData) => {
-    const doc = createGoogleSpreadsheetInstance();
-    await useServiceAccountAuth(doc);
-    const sheet = await getSheetByIndex(sheetIndex);
-    const newRow = { ...newRowData };
-    await sheet.addRow(newRow);
-    return newRow;
-};
+// Exemplo de uso para obter dados de uma planilha
+async function getDataFromSheet(pageName) {
+    const spreadsheetId = sheets.spreadsheet_id;
 
-const getAllRows = async (sheetIndex) => {
-    const doc = createGoogleSpreadsheetInstance();
-    await useServiceAccountAuth(doc);
-    const sheet = await getSheetByIndex(sheetIndex);
-    const rows = await sheet.getRows();
-    return rows;
-};
+    const document = await authenticate(spreadsheetId);
+    if (document) {
+        const range = pageName;
+        const response = await document.spreadsheets.values.get({
+            spreadsheetId,
+            range
+        });
 
-const getRow = async (sheetIndex, identity) => {
-    const doc = createGoogleSpreadsheetInstance();
-    await useServiceAccountAuth(doc);
-    const sheet = await getSheetByIndex(sheetIndex);
-    const rows = await sheet.getRows();
-    const foundRow = rows.find((row) => row.Identity === identity);
-    return foundRow || { error: 'Row not found.' };
-};
+        const rows = response.data.values;
+        const headers = rows[0];
+        const data = rows.slice(1);
 
-const deleteRow = async (sheetIndex, identity) => {
-    const doc = createGoogleSpreadsheetInstance();
-    await useServiceAccountAuth(doc);
-    const sheet = await getSheetByIndex(sheetIndex);
-    const rows = await sheet.getRows();
-    const foundRow = rows.find((row) => row.Identity === identity);
-    if (!foundRow) {
-        return { error: 'Row not found.' };
+        // Converter os dados em um array de objetos JSON
+        const jsonData = data.map((row) => {
+            const rowData = {};
+            headers.forEach((header, index) => {
+                rowData[header] = row[index];
+            });
+            return rowData;
+        });
+
+        console.log(jsonData);
     }
-    await foundRow.delete();
-    return { status: 'success' };
-};
+}
 
-const updateRow = async (sheetIndex, identity, newData) => {
-    const doc = createGoogleSpreadsheetInstance();
-    await useServiceAccountAuth(doc);
-    const sheet = await getSheetByIndex(sheetIndex);
-    const rows = await sheet.getRows();
-    const foundRow = rows.find((row) => row.Identity === identity);
-    if (!foundRow) {
-        return { error: 'Row not found.' };
-    }
-    Object.assign(foundRow, newData);
-    await foundRow.save();
-    return foundRow;
-};
+getDataFromSheet('Sheet1');
 
 module.exports = {
-    saveRow,
-    getAllRows,
-    getRow,
-    deleteRow,
-    updateRow
+    getDataFromSheet
 };
