@@ -109,12 +109,25 @@ class SheetService {
                     (row) => row[headers.indexOf(param)] === value
                 );
                 if (rowIndex !== -1) {
-                    const rangeToDelete = `${pageName}!${rowIndex +
-                        2}:${rowIndex + 2}`;
-                    await document.spreadsheets.values.clear({
+                    const { sheetId } = response.data;
+                    await document.spreadsheets.batchUpdate({
                         spreadsheetId,
-                        range: rangeToDelete
+                        resource: {
+                            requests: [
+                                {
+                                    deleteDimension: {
+                                        range: {
+                                            sheetId,
+                                            dimension: 'ROWS',
+                                            startIndex: rowIndex + 1,
+                                            endIndex: rowIndex + 2
+                                        }
+                                    }
+                                }
+                            ]
+                        }
                     });
+
                     return {
                         status: 'success',
                         message: 'Deletado com sucesso!'
