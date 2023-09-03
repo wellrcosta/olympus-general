@@ -1,8 +1,4 @@
-FROM node:20-alpine
-
-RUN apk --no-cache add --virtual native-deps \
-    g++ gcc libgcc libstdc++ linux-headers autoconf automake make nasm python git && \
-    npm install --quiet node-gyp -g
+FROM node:18.17.1-alpine3.17
 
 RUN [ "mkdir", "/app"]
 

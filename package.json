@@ -16,7 +16,8 @@
         "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
         "lint": "eslint 'src/**/*.js' 'test/**/*.js'",
         "start": "node src/server.js",
-        "test": "npm run lint && npm run jest"
+        "test": "npm run lint && npm run jest",
+        "dev": "nodemon src/server.js"
     },
     "jest": {
         "testResultsProcessor": "jest-sonar-reporter",
@@ -31,7 +32,6 @@
         "express-async-errors": "^3.1.1",
         "express-mung": "^0.5.1",
         "express-unless": "^0.5.0",
-        "google-spreadsheet": "^4.0.2",
         "googleapis": "^126.0.0",
         "helmet": "^7.0.0",
         "http-status-codes": "^1.4.0",
@@ -53,6 +53,7 @@
         "eslint-plugin-prettier": "^3.4.1",
         "jest": "^24.9.0",
         "jest-sonar-reporter": "^2.0.0",
+        "nodemon": "^3.0.1",
         "prettier": "^1.19.1",
         "superagent": "^5.3.1",
         "supertest": "^4.0.2"

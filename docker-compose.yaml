@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  api:
+    image: node:18.17.1-alpine3.17
+    volumes:
+      - .:/app
+    command:
+      - sh
+      - -c
+      - |
+        cd /app
+        npm install
+        npm run dev
+    ports:
+      - 3333:3333
